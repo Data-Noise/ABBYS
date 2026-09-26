@@ -1,0 +1,106 @@
+<!-- 
+Новый шаблон, который учитывает все ошибки прошлого
+С 19.10.2025 ~20:20 
+
+Новая правка, ради вёрстки стили перенесены в 
+css. Дата: 05.05.2026
+-->
+<!DOCTYPE html>
+<html lang="en" class="html">
+	<head style="margin: 0px;">
+		<title>M-LIB </title>	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet"  href="static/style/style.css">
+		<link rel="stylesheet"  href="static/style/pageDesign.css">
+		<link rel="stylesheet"  href="static/style/styleDisplay.css">
+	</head>
+
+	<body class="pageBackground" >
+		<div class="pageBase" >
+			<div class="texturePageBackgroundHat">
+				<div class="for_TexturePageBackgroundHat">
+					<p class="logofont">ABBYS</p>
+					
+				</div>	
+			</div>
+			
+					
+		
+			<div id="two" class="two">
+				<div class="content">
+
+					
+					<div class="panel" >
+						<script>
+							fetch('static/articles/welcome.html')
+							.then(response => response.text())
+							.then(html => document.getElementById('content').innerHTML = html);
+						</script>
+					<div id="content" style="margin-top: 30px;"></div>
+					</div>
+				</div>
+			</div>
+
+			
+			
+		</div>
+	</body>
+</html>
+<style>
+.texturePageBackgroundHat
+{
+	background-image: url(static/graysea.gif);
+	background-position-x: center;
+    /*background-size: 1420px 2100px;*/
+	background-size: 1420px 1420px;
+    background-attachment: fixed;
+}
+.two
+{
+	background-image: url(static/graysea.gif);
+	background-position-x: center;
+    /*background-size: 1420px 2100px;*/
+	background-size: 1420px 1420px;
+    background-attachment: fixed;
+}
+.for_TexturePageBackgroundHat
+{
+	background-color: rgba(255, 255, 255, 0);
+}
+.logofont
+{
+	text-align: center;
+}
+.pageBase
+{
+	padding-bottom: 20px;
+	background-color: black;
+}
+.html
+{
+	background-color: black;
+}
+.pageBackground
+{
+	background-color: black;
+}
+.panel
+{
+	background-color: rgba(250, 235, 215, 0);
+}
+.Title_2
+{
+	background-color: rgba(255, 0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+.contentHat
+{
+	background-color: rgba(240, 248, 255, 0);
+}
+.content
+{
+	background-color: rgba(0, 0, 0, 0.414);
+}
+</style>

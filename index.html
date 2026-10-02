@@ -1,106 +1,109 @@
-<!-- 
-Новый шаблон, который учитывает все ошибки прошлого
-С 19.10.2025 ~20:20 
-
-Новая правка, ради вёрстки стили перенесены в 
-css. Дата: 05.05.2026
--->
 <!DOCTYPE html>
-<html lang="en" class="html">
-	<head style="margin: 0px;">
-		<title>M-LIB </title>	
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<link rel="stylesheet"  href="static/style/style.css">
-		<link rel="stylesheet"  href="static/style/pageDesign.css">
-		<link rel="stylesheet"  href="static/style/styleDisplay.css">
-	</head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ABBYS</title>
+    <style>
+        @font-face {
+            font-family: 'Greengoth';
+            src: url('static/style/fonts/ofont.ru_Greengoth.ttf') format('truetype');
+            font-display: swap;
+        }
 
-	<body class="pageBackground" >
-		<div class="pageBase" >
-			<div class="texturePageBackgroundHat">
-				<div class="for_TexturePageBackgroundHat">
-					<p class="logofont">ABBYS</p>
-					
-				</div>	
-			</div>
-			
-					
-		
-			<div id="two" class="two">
-				<div class="content">
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
 
-					
-					<div class="panel" >
-						<script>
-							fetch('static/articles/welcome.html')
-							.then(response => response.text())
-							.then(html => document.getElementById('content').innerHTML = html);
-						</script>
-					<div id="content" style="margin-top: 30px;"></div>
-					</div>
-				</div>
-			</div>
+        body {
+            background: #000 url(static/graysea.gif) center center / cover fixed no-repeat;
+            color: #eee;
+            font-family: sans-serif;
+        }
 
-			
-			
-		</div>
-	</body>
+        .for_TexturePageBackgroundHat {
+            text-align: center;
+        }
+
+        .logofont {
+            margin: 0;
+            padding: 40px 0 20px;
+            font-size: 48px;
+            letter-spacing: 0.3em;
+        }
+
+        .two {
+            padding: 20px 0 60px;
+        }
+
+        .ind_content {
+            width: 720px;
+            height: 960px;
+            margin: 0 auto;
+            background: url("maket.png") center center / contain no-repeat;
+            padding: 96px 86px;
+            box-sizing: border-box;
+        }
+
+        .list_art {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            text-align: left;
+            padding-left: 80px;
+            box-sizing: border-box;
+            font-family: 'Greengoth', sans-serif;
+            font-size: 30px;
+			padding-top: 25px;
+        }
+
+        .list_art p {
+            line-height: 1.6;
+            margin: 0 0 12px;
+			color: #ededed;
+			-webkit-text-stroke: 0.5px #000000;
+        }
+
+        .list_art h1,
+        .list_art h2,
+        .list_art h3 {
+            margin: 0 0 12px;
+        }
+
+		a {
+			color: inherit;   
+			text-decoration: none;
+		}
+		#mylink
+		{
+			color: aqua;
+		}
+		#title
+		{
+			color: rgb(59, 0, 0);
+			font-size: 30px;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="for_TexturePageBackgroundHat">
+        <p class="logofont">ABBYS</p>
+    </div>
+
+    <div id="two" class="two">
+        <div class="ind_content">
+            <div class="list_art" id="list_art"></div>
+        </div>
+    </div>
+
+    <script>
+        fetch('static/articles/welcome.html')
+            .then(r => r.text())
+            .then(html => document.getElementById('list_art').innerHTML = html)
+            .catch(err => {
+                document.getElementById('list_art').textContent = 'Ошибка загрузки: ' + err;
+            });
+    </script>
+</body>
 </html>
-<style>
-.texturePageBackgroundHat
-{
-	background-image: url(static/graysea.gif);
-	background-position-x: center;
-    /*background-size: 1420px 2100px;*/
-	background-size: 1420px 1420px;
-    background-attachment: fixed;
-}
-.two
-{
-	background-image: url(static/graysea.gif);
-	background-position-x: center;
-    /*background-size: 1420px 2100px;*/
-	background-size: 1420px 1420px;
-    background-attachment: fixed;
-}
-.for_TexturePageBackgroundHat
-{
-	background-color: rgba(255, 255, 255, 0);
-}
-.logofont
-{
-	text-align: center;
-}
-.pageBase
-{
-	padding-bottom: 20px;
-	background-color: black;
-}
-.html
-{
-	background-color: black;
-}
-.pageBackground
-{
-	background-color: black;
-}
-.panel
-{
-	background-color: rgba(250, 235, 215, 0);
-}
-.Title_2
-{
-	background-color: rgba(255, 0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-.contentHat
-{
-	background-color: rgba(240, 248, 255, 0);
-}
-.content
-{
-	background-color: rgba(0, 0, 0, 0.414);
-}
-</style>
